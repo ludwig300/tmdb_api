@@ -1,11 +1,13 @@
 from own_db_helpers import load_data
 from collections import OrderedDict
 
+
 def find_my_film(keyword, films_data):
     for film in films_data:
         if keyword == film['original_title']:
             return film
     return None
+
 
 def get_rating(my_film, films_data, num_to_recommend=8):
     params = {
@@ -22,13 +24,16 @@ def get_rating(my_film, films_data, num_to_recommend=8):
                 film_rate += params[parameter]
         rating[film['original_title']] = film_rate
     del rating[my_film['original_title']]
-    rating = OrderedDict(sorted(rating.items(), key=lambda t: t[1], reverse=True))
+    rating = OrderedDict(
+        sorted(rating.items(), key=lambda t: t[1], reverse=True)
+    )
     final_recommendation = []
     for film in rating:
         if len(final_recommendation) > num_to_recommend:
             break
         final_recommendation.append(film)
     return final_recommendation
+
 
 if __name__ == '__main__':
     path = input('Enter path to DataBase:')
@@ -44,4 +49,3 @@ if __name__ == '__main__':
     recommendation = get_rating(my_film, films_data)
     for film in sorted(recommendation):
         print(film)
-

@@ -4,19 +4,26 @@ import urllib.parse
 from tmdb_helpers import get_user_api_key
 from tmdb_helpers import make_tmdb_api_request
 
+
 def load_films(user_api_key, films_amount=1000):
     all_films = []
     for film_id in range(films_amount):
         try:
-            all_films.append(make_tmdb_api_request(method='/movie/%d' % film_id, api_key=user_api_key))
+            all_films.append(
+                make_tmdb_api_request(
+                    method='/movie/%d' % film_id,
+                    api_key=user_api_key
+                )
+            )
         except urllib.error.HTTPError as err:
-            if err.code == 404:  #if no film on this id
+            if err.code == 404:  # if no film on this id
                 continue
             else:
                 raise
         finally:
-            print('%s percent complete' % str(film_id*100/ films_amount))
+            print('%s percent complete' % str(film_id * 100 / films_amount))
     return all_films
+
 
 if __name__ == '__main__':
     user_api_key = get_user_api_key()
