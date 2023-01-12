@@ -27,3 +27,16 @@ $ py find_similar.py
 
 ![Desktop Screenshot 2023 01 12 - 16 21 22 09](https://user-images.githubusercontent.com/105148929/212028117-357cc3ec-923f-4288-93bb-ce459450d5f9.png)
 
+## search_in_db.py
+This script search a movie in the database
+
+#### How to use
+Open project directory from cmd
+```
+$ py search_in_db.py
+```
+Accepts an input 
+- path to the database
+- film original title
+
+
