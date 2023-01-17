@@ -39,4 +39,14 @@ Accepts an input
 - path to the database
 - film original title
 
+## hello_api_TMDB.py
+The script checks the validity of the API key. On successful check, returns the budget for the movie with ID 215.
+
+#### How to use
+Open project directory from cmd
+```
+$ py hello_api_TMDB.py
+```
+Accepts an input API key
+
 
