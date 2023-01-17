@@ -2,6 +2,16 @@
 ## For start, you need to get API key
 [How to get a TMDb API Key](https://docs.themeluxury.com/movieasap/getting-started/how-to-get-a-tmdb-api-key/)
 
+## hello_api_TMDB.py
+The script checks the validity of the API key. On successful check, returns the budget for the movie with ID 215.
+
+#### How to use
+Open project directory from cmd
+```
+$ py hello_api_TMDB.py
+```
+Accepts an input API key
+
 ## make_own_db.py
 This script loads the descriptions for 1000 movies into the `MyFilmDB.json` file.
 
@@ -39,14 +49,14 @@ Accepts an input
 - path to the database
 - film original title
 
-## hello_api_TMDB.py
-The script checks the validity of the API key. On successful check, returns the budget for the movie with ID 215.
+## own_db_helpers.py
+This is a helper script to get the contents of the local database.
 
-#### How to use
-Open project directory from cmd
-```
-$ py hello_api_TMDB.py
-```
-Accepts an input API key
+## tmdb_helpers.py
+This is a script with helper functions
+- `make_tmdb_api_request` function to make request the [themoviedb](https://api.themoviedb.org) service API
 
+- `load_json_data_from_url` funcion to load json data from url
+
+- `get_user_api_key` funcion to get user API key
 
